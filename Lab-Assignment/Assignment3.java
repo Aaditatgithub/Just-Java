@@ -21,7 +21,7 @@ class Shape {
     }
 }
 
-public class Assignment3 {
+public class Assignment3 extends Shape {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Shape shape = new Shape();
