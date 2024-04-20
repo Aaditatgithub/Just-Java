@@ -1,15 +1,25 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 class DownloadStatus {
-    private int totalBytes = 0;
+    private int totalBytes;
+    private Lock lock = new ReentrantLock();
 
     public int getTotalBytes() {
         return totalBytes;
     }
 
     public void incrementTotalBytes(){
-        totalBytes++;
+        lock.lock();
+        try{
+            totalBytes++;
+        }
+        finally{    
+            // in complex logic, if something happens, while cleanup, access to resource can be unlocked
+            lock.unlock();
+        }
     }
 }
 
@@ -30,7 +40,7 @@ class DownloadFile implements Runnable{
 }
 
 
-public class ConcurrencyIssues {
+public class Locks {
  public static void main(String[] args) {
 
     List<Thread> threads = new ArrayList<>();

@@ -2,13 +2,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 class DownloadStatus {
-    private int totalBytes = 0;
+    private int totalBytes;
+    private int totalFiles;
+    private Object totalBytesLock = new Object();
+    private Object totalFilesLock = new Object();
 
     public int getTotalBytes() {
         return totalBytes;
     }
+    public int getTotalFiles() {
+        return totalFiles;
+    }
 
-    public void incrementTotalBytes(){
+    public void incrementTotalFiles(){
+        synchronized(this) {
+            totalFiles++;
+        }
+    }
+
+    public synchronized void incrementTotalBytes(){
         totalBytes++;
     }
 }
@@ -30,7 +42,7 @@ class DownloadFile implements Runnable{
 }
 
 
-public class ConcurrencyIssues {
+public class SynchronizedKeyword {
  public static void main(String[] args) {
 
     List<Thread> threads = new ArrayList<>();

@@ -16,8 +16,13 @@ class DownloadStatus {
 class DownloadFile implements Runnable{
 
     private DownloadStatus status;
-    public DownloadFile(DownloadStatus status){
-        this.status = status;
+    public DownloadFile(){
+        this.status = new DownloadStatus();
+    }
+
+    //Getter
+    public DownloadStatus getStatus() {
+        return status;
     }
 
     @Override
@@ -30,14 +35,17 @@ class DownloadFile implements Runnable{
 }
 
 
-public class ConcurrencyIssues {
+public class Confinement {
  public static void main(String[] args) {
 
     List<Thread> threads = new ArrayList<>();
-    DownloadStatus status = new DownloadStatus();
+    List<DownloadFile> tasks = new ArrayList<>();
 
     for (int i = 0; i < 10; i++) {
-        var thread = new Thread(new DownloadFile(status));
+        var task = new DownloadFile();
+        tasks.add(task);
+        var thread = new Thread(task);
+
         thread.start();
         threads.add(thread);
     }
@@ -50,7 +58,13 @@ public class ConcurrencyIssues {
             e.printStackTrace();
         }
     }
+    
+    System.out.println(    
+        tasks.stream()
+        .map((DownloadFile task) -> task.getStatus().getTotalBytes())
+        .reduce(Integer::sum)
+    );
 
-    System.out.println(status.getTotalBytes());
+
  }   
 }
