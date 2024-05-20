@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Statement2 {
@@ -7,8 +6,6 @@ public class Statement2 {
         Scanner scanner = new Scanner(System.in);
 
         String line = scanner.nextLine();
-
-        
         System.out.println("Length of string: " + line.length());
         System.out.println("Lowercase String: " + line.toLowerCase());
         System.out.println("Uppercase String: " + line.toUpperCase());

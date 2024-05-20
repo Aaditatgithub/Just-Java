@@ -11,10 +11,10 @@ public class Statement3 {
 
         System.out.println("Enter the array: ");
 
-
         for(int i = 0; i < sizeArray; i++){
             Array[i] = sc.nextInt();
         }
+
         int sum = 0;
         for(int i : Array){
             sum += i;
@@ -22,11 +22,8 @@ public class Statement3 {
         
         System.out.println("Sum is: " + sum);
         System.out.println("Average is: " + sum/sizeArray);
-        //display mix and max
-
+        
         //returns index of element
         System.out.println(Arrays.binarySearch(Array, 12));
-
-        
     }
 }

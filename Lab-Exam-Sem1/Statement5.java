@@ -8,6 +8,7 @@ public class Statement5 {
     //    List<String> companies = new ArrayList<>(Arrays.asList("Google","Apple","Microsoft","Amazon","Facebook"));
         List<String> companies = new ArrayList<>();
         Collections.addAll(companies,"Google","Apple","Microsoft","Amazon","Facebook");
+        
        companies.add("CapGemini");
         
        System.out.println(companies);

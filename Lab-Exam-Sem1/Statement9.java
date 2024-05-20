@@ -1,33 +1,23 @@
-class NoVowelsFoundException extends Exception{
-    public NoVowelsFoundException(String message){
-        super(message);
-    }
-}
+import java.util.Scanner;
 
-public class Statement9 {
+public class Statement9{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String texString = sc.nextLine();
+        boolean hasVowels = false;
 
-    static boolean checkForVowels (String str) throws NoVowelsFoundException{
-        boolean containsVowels = false;
-        for (char c : str.toCharArray()) {
-            if ("AEIOUaeiou".indexOf(c) != -1) {
-                containsVowels = true;
+        char[] str = texString.toCharArray();
+
+        for(char c : str){
+            if("AEIOUaeiou".indexOf(c) != -1){
+                System.out.println("String has vowels");
+                hasVowels = true;
                 break;
             }
         }
-        if (!containsVowels) {
-            throw new NoVowelsFoundException("String does not contain any vowels");
-        }
-        return containsVowels;
-    } 
 
-    public static void main(String[] args) {
-        String sentence = "Yoro";
-        
-        try{
-            checkForVowels(sentence);
-            System.out.println("String contains vowels");
-        }catch(Exception e){
-            System.out.println(e.getMessage());
+        if(hasVowels == false){
+            System.out.println("String doesnt has vowels ");
         }
     }
 }
