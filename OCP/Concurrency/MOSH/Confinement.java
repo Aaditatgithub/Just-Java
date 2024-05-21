@@ -63,8 +63,8 @@ public class Confinement {
         tasks.stream()
         .map((DownloadFile task) -> task.getStatus().getTotalBytes())
         .reduce(Integer::sum)
+        .get()
     );
-
 
  }   
 }

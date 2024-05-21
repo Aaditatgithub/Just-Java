@@ -20,6 +20,8 @@ class DownloadStatus {
         }
     }
 
+    // Above function and this one are equivalent. They are synchronized on same monitor object
+    // Prefer using synchronized(LockForAResource) {}
     public synchronized void incrementTotalBytes(){
         totalBytes++;
     }
