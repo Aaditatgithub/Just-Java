@@ -1,5 +1,3 @@
-
-
 interface MyInterface {
     // Constant field (implicitly public, static, and final)
     String INTERFACE_NAME = "MyInterface";
@@ -20,7 +18,7 @@ interface MyInterface {
         System.out.println("Static method in interface");
     }
 
-    // Private method with implementation
+    // Private method with implementation being used by default methods
     private void privateMethod() {
         System.out.println("Private method in interface");
     }
