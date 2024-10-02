@@ -43,6 +43,7 @@ public class InitializationFlow {
     }
 }
 
+// fINAL variables can be assigned null values as far as it is explicitly set.
 
 // OUTPUT
     // Static initialization block of Parent class
@@ -50,6 +51,6 @@ public class InitializationFlow {
     // Static initialization block of Main class
     // Inside main method
     // Instance initialization block of Parent class
-    // Constructor of Parent class
+    // Constructor of Parent class*
     // Instance initialization block of Child class
     // Constructor of Child class

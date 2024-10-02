@@ -7,6 +7,7 @@ public class Enums {
         WINTER, SPRING, SUMMER, FALL
     }
 
+
     public static void main(String[] args) {
         // Accessing enum methods
         

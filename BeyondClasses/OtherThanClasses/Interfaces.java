@@ -1,3 +1,8 @@
+//  Interfaces are implicitly abstract.
+//  Interface variables are implicitly public, static, and final.
+//  Interface methods without a body are implicitly abstract.
+//  Interface methods without the private modifier are implicitly public.
+
 interface MyInterface {
     // Constant field (implicitly public, static, and final)
     String INTERFACE_NAME = "MyInterface";

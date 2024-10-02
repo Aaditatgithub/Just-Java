@@ -27,6 +27,6 @@ enum Seasons implements HasOpeningHours {
 
 public class EnumsEnhanced {
   public static void main(String[] args) {
-    System.out.println(Seasons.WINTER.ordinal());
+    System.out.println(Seasons.WINTER.valueOf("SUMMER").getHours());
   }
 }

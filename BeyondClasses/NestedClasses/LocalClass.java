@@ -11,7 +11,6 @@ class LocalClassExample {
                 System.out.println("num2: " + num2);
             }
         }
-
         // Instantiating the local class and invoking the display method
         LocalClass local = new LocalClass();
         local.display();
